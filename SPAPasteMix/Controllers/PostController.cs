@@ -8,7 +8,6 @@ using SPAPasteMix.Services.Formatters;
 namespace SPAPasteMix.Controllers
 {
     [Produces("application/json")]
-    //[Route("api/Post")]
     public class PostController : Controller
     {
         public readonly INoteRepository _noteRepository;
@@ -27,7 +26,6 @@ namespace SPAPasteMix.Controllers
             _noteRepository = noteRepository;
         }
 
-        // GET: api/GetPosts
         [HttpGet]
         public IEnumerable<object> GetPosts()
         {
@@ -42,8 +40,6 @@ namespace SPAPasteMix.Controllers
                 });
         }
 
-        // GET: api/GetPosts/UUID
-        //[HttpGet("{id}")]
         [HttpGet]
         public object GetPost(string id)
         {
@@ -68,7 +64,6 @@ namespace SPAPasteMix.Controllers
             }
         }
 
-        // PUT: api/Post/CreatePost/5
         [HttpPut]
         public object CreatePost(
               [FromQuery(Name = "Title")]string title
